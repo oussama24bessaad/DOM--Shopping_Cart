@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"
+        type="text/javascript"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="https://pages.ebay.com/favicon.ico">
+    <!--  like/dislike-->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- 
+    <style>
+        .fa {
+            font-size: 50px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .fa:hover {
+            color: darkblue;
+        }
+    </style>
+-->
+
+</head>
+
+<body>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <header class="col-xl-12 col-lg-8 col-md-7 adjust h-position">
+                <div class="p-3 flexy">
+
+                    <h2 class="h5 text-uppercase mb-0">Total (2 Items): <br><strong class="cart-total"
+                            style="color: brown;">112.11</strong>
+                    </h2>
+                    <button type="button" aria-hidden="true" onClick="window.location.reload();"><i
+                            class="fa fa-refresh icon-cog" aria-hidden="true"></i></button>
+                </div>
+
+            </header>
+            <br><br>
+            <br><br>
+            <br><br>
+            <div class="border border-gainsboro p-3 mt-3 clearfix item spc">
+                <div>
+                    <i class="fas fa-thumbs-up colth"></i>
+                </div>
+                <div class="text-lg-left">
+                    <i class="" aria-hidden="true">
+                        <img id="imgZoom" src="s-l1600.jpg" width="160px" height="200px">
+
+                    </i>
+                </div>
+                <div class="col-lg-5 col-5 text-lg-left">
+                    <h3 class="h6 mb-0">Sapin artificiel avec kit de décoration - Ottawa 150cm - vert avec
+                        décorations<br>
+                        <small> Cost: $99/set</small>
+                    </h3>
+                </div>
+                <div class="product-price d-none">99</div>
+                <div class="pass-quantity col-lg-2 col-md-4 col-sm-3">
+                    <label for="pass-quantity" class="pass-quantity">Quantity</label>
+                    <input class="form-control" type="number" value="1" min="1">
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-2 product-line-price pt-4">
+                    <span class="product-line-price">99</span>
+                </div>
+
+
+                <!--
+                                                   <button class="btn btn-danger btn-circle btn-lg btn-secondary like-review buttoncheck1"
+                            type="button"><i class="fa fa-heart"></i>
+                        </button>
+                    -->
+                <!-- <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+
+                        <script>
+                            function myFunction(x) {
+                                x.classList.toggle("fa-thumbs-down");
+                            }
+                        </script>
+
+                    -->
+                   
+                <div class="remove-item pt-4">
+                    <button class="btn btn-warning btn-circle btn-lg remove-product"><i
+                            class="glyphicon glyphicon-volume-off" aria-hidden="true">Delete</i></button>
+
+
+
+                </div>
+               
+            </div>
+            <div class="border border-gainsboro p-3 mt-3 clearfix item spc">
+                <div>
+                    <i class="fas fa-thumbs-up colth"></i>
+                </div>
+                <div class="text-lg-left">
+                    <i class="" aria-hidden="true">
+                        <img id="imgZoom" src="s-l1600c.jpg" width="160px" height="200px">
+                        <div id="overlay" onmousemove="zoomIn()"></div>
+                    </i>
+                </div>
+                <div class="col-lg-5 col-5 text-lg-left">
+                    <h3 class="h6 mb-0">Couronne de Noël 20 LED Ø32 cm blanc-chaud piles décoration couleur au
+                        choix<br><small><small>Cost: $12/set</small></small></h3>
+                </div>
+                <div class="product-price d-none">12</div>
+                <div class="pass-quantity col-lg-2 col-md-4 col-sm-3">
+                    <label for="pass-quantity" class="pass-quantity">Quantity</label>
+                    <input class="form-control" type="number" value="1" min="1">
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-2 product-line-price pt-4">
+                    <span class="product-line-price">12</span>
+
+                </div>
+                
+
+
+
+                <div class="remove-item pt-4">
+
+                    <button class="btn btn-warning btn-circle btn-lg remove-product"><i
+                            class="glyphicon glyphicon-volume-off" aria-hidden="true">Delete</i></button>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- item -->
+    </div>
+    <center>
+        <div class="col-xl-5 col-lg-8 col-md-7 adjust totals">
+            <div class="border border-gainsboro px-3">
+                <div class="border-bottom border-gainsboro">
+                    <p class="text-uppercase mb-0 py-3"><strong>Order Summary</strong></p>
+                </div>
+                <div class="totals-item d-flex align-items-center justify-content-between mt-3">
+                    <p class="text-uppercase">Subtotal</p>
+                    <p class="totals-value" id="cart-subtotal">111</p>
+                </div>
+                <div class="totals-item d-flex align-items-center justify-content-between">
+                    <p class="text-uppercase">Delevery cost(1%)</p>
+                    <p class="totals-value" id="cart-tax">1.11</p>
+                </div>
+                <div
+                    class="totals-item totals-item-total d-flex align-items-center justify-content-between mt-3 pt-3 border-top border-gainsboro">
+                    <p class="text-uppercase"><strong>Total</strong></p>
+                    <p class="totals-value font-weight-bold cart-total">112.11</p>
+                </div>
+            </div>
+            <a  class="mt-3 btn btn-pay w-100 d-flex justify-content-between btn-lg rounded-0 noway" onClick="window.location.reload();">Pay Now <span
+                    class="totals-value cart-total">112.11</span></a>
+        </div>
+    </center>
+    </div>
+    </div><!-- container -->
+
+
+</body>
+<footer class="footer-distributed">
+  
+  
+    <div >
+  
+      
+      <a href="mailto:oussama24bessaad@gmail.com">
+        
+        <p>Oussama Bessaad © 2021</p>
+      </a>
+    </div>
+  
+  </footer>
+</html>
